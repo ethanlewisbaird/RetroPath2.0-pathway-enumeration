@@ -1,0 +1,19 @@
+README RetroPath2.0 pathway enumeration
+
+Created by Ethan Baird
+
+Introduction
+
+RetroPath2.0 pathway enumeration is a simple algorithm that takes RetroPath2.0 output data and  generates a list of all feasible pathways from the initial target compound to the sink. Where feasible is defined as any pathway that connects the initial starting compound to the sink and excludes loops and pathways exceeding the user specified maximum number of metabolites.
+
+How to use
+
+1. Save the python script file for the tool to the current directory where the RetroPath2.0 output is saved.
+2. Open a command line terminal in linux or command prompt in windows and navigate to the directory containing the tool python script file and the RetroPath2.0 output file.
+3. Run the code by parsig the following arguments: the tool script filename, the filename of the RetroPath2.0 output, and the maximum number of metabolites in a pathway.
+
+Example command line to run the program
+$ python retropath2.0_pathway_selection.py solution_caffeic_acid.csv 8
+
+Output
+The results of this tool will be a .csv file called 'paths.csv' and is saved in the current directory, the same directory as the RetroPath2.0 output and the tool python script. The format of the output file is each line of paths.csv is a metabolic pathway. Each metabolite in the metabolic pathway is separated by a comma. The order of the pathways is simply the order in which the algorithm found the pathways.
